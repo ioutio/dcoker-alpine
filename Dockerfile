@@ -1,6 +1,6 @@
 FROM alpine
 #声明作者
-LABEL maintainer="a little <mo@autre.cn>"
+LABEL maintainer="a little <little@autre.cn> https://coding.autre.cn"
 #更改源，升级内核及软件
 RUN set -x \
     ##&& sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
@@ -12,4 +12,4 @@ RUN set -x \
     && apk del tzdata \
     ##清除安装软件及缓存
     && rm -rf /tmp/* /var/cache/apk/*
-CMD ["/bin/sh"]
+ENTRYPOINT ["/bin/sh"]
